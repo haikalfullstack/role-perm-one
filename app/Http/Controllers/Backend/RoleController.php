@@ -152,6 +152,11 @@ class RoleController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('all.roles')->with($notification);
+        return redirect()->route('all.roles.permissions')->with($notification);
+    }
+
+    public function AllRolesPermissions(){
+        $roles = Role::all();
+        return view('backend.pages.permissions.all_roles_permissions', compact('roles'));
     }
 }
