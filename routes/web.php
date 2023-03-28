@@ -58,6 +58,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     
     // Roles
     Route::get('/all/roles', [RoleController::class, 'AllRoles'])->name('all.roles');
+    Route::get('/add/roles', [RoleController::class, 'AddRoles'])->name('add.roles');
     
 
 });
