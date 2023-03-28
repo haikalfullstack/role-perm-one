@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use DB;
+use App\Models\User;
 
 class User extends Authenticatable
 {
@@ -38,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getPermissionsGroups(){
+        $permissions_groups = DB::table('permissions')->select('group_name')->groupBy('group_name')->get();
+
+        return $permissions_groups;
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
 
 class RoleController extends Controller
 {
@@ -130,6 +131,9 @@ class RoleController extends Controller
     public function AddRolesPermissions(){
         $roles = Role::all();
         $permissions = Permission::all();
-        return view('backend.pages.permissions.add_roles_permissions', compact('roles', 'permissions'));
+        $permissions_groups = User::getPermissionsGroups();
+
+     
+        return view('backend.pages.permissions.add_roles_permissions', compact('roles', 'permissions', 'permissions_groups'));
     }
 }

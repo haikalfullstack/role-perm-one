@@ -48,11 +48,16 @@
 
                                     <hr class="mt-5">
 
+                                    @foreach($permissions_groups as $group)
                                     <div class="row">
+
                                         <div class="col-3">
+
+
+
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="flexCheckDefault">
-                                                <label for="flexCheckDefault" class="form-check-label">dfault</label>
+                                                <label for="flexCheckDefault" class="form-check-label">{{ $group->group_name }}</label>
                                             </div>
                                         </div>
                                         <div class="col-9">
@@ -61,7 +66,9 @@
                                                 <label for="flexCheckDefault1" class="form-check-label">dfault</label>
                                             </div>
                                         </div>
+
                                     </div>
+                                    @endforeach
                                 </div>
 
 
