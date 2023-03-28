@@ -62,6 +62,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::post('/store/roles', [RoleController::class, 'StoreRoles'])->name('store.roles');
     Route::get('/edit/roles/{id}', [RoleController::class, 'EditRoles'])->name('edit.roles');
     Route::post('/update/roles', [RoleController::class, 'UpdateRoles'])->name('update.roles');
+    Route::get('/delete/roles/{id}', [RoleController::class, 'DeleteRoles'])->name('delete.roles');
     
 
 });
