@@ -69,6 +69,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/add/roles/permissions', [RoleController::class, 'AddRolesPermissions'])->name('add.roles.permissions');
     Route::post('/roles/permissions/store', [RoleController::class, 'RolesPermissionsStore'])->name('roles.permissions.store');
     Route::get('/all/roles/permissions', [RoleController::class, 'AllRolesPermissions'])->name('all.roles.permissions');
+    Route::get('/admin/edit/roles/{id}', [RoleController::class, 'AdminEditRoles'])->name('admin.edit.roles');
 
 });
 
