@@ -51,6 +51,8 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/all/permissions', [RoleController::class, 'AllPermissions'])->name('all.permissions');
     Route::get('/add/permissions', [RoleController::class, 'AddPermissions'])->name('add.permissions');
     Route::post('/store/permissions', [RoleController::class, 'StorePermissions'])->name('store.permissions');
+    Route::get('/edit/permissions/{id}', [RoleController::class, 'EditPermissions'])->name('edit.permissions');
+    
 
 });
 
@@ -67,3 +69,4 @@ Route::middleware(['auth', 'role:vendor'])->group(function(){
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/vendor/login', [VendorController::class, 'VendorLogin'])->name('vendor.login');
+
