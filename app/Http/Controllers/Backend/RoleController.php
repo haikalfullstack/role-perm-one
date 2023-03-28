@@ -124,4 +124,12 @@ class RoleController extends Controller
         
     } 
     // End Roles
+
+
+    // Roles in Permissions
+    public function AddRolesPermissions(){
+        $roles = Role::all();
+        $permissions = Permission::all();
+        return view('backend.pages.permissions.add_roles_permissions', compact('roles', 'permissions'));
+    }
 }
