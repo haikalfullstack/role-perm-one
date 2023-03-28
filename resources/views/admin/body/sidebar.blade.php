@@ -175,20 +175,15 @@
                 <li> <a href="authentication-signup.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign
                         Up</a>
                 </li>
-                <li> <a href="authentication-signin-with-header-footer.html" target="_blank"><i
-                            class="bx bx-right-arrow-alt"></i>Sign In with Header & Footer</a>
+                <li> <a href="authentication-signin-with-header-footer.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign In with Header & Footer</a>
                 </li>
-                <li> <a href="authentication-signup-with-header-footer.html" target="_blank"><i
-                            class="bx bx-right-arrow-alt"></i>Sign Up with Header & Footer</a>
+                <li> <a href="authentication-signup-with-header-footer.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Sign Up with Header & Footer</a>
                 </li>
-                <li> <a href="authentication-forgot-password.html" target="_blank"><i
-                            class="bx bx-right-arrow-alt"></i>Forgot Password</a>
+                <li> <a href="authentication-forgot-password.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Forgot Password</a>
                 </li>
-                <li> <a href="authentication-reset-password.html" target="_blank"><i
-                            class="bx bx-right-arrow-alt"></i>Reset Password</a>
+                <li> <a href="authentication-reset-password.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Reset Password</a>
                 </li>
-                <li> <a href="authentication-lock-screen.html" target="_blank"><i
-                            class="bx bx-right-arrow-alt"></i>Lock Screen</a>
+                <li> <a href="authentication-lock-screen.html" target="_blank"><i class="bx bx-right-arrow-alt"></i>Lock Screen</a>
                 </li>
             </ul>
         </li>
@@ -241,20 +236,19 @@
                 <div class="menu-title">Pricing</div>
             </a>
         </li>
-        <li class="menu-label">Charts & Maps</li>
+        <li class="menu-label">Roles And Permissions</li>
         <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bx bx-line-chart"></i>
                 </div>
-                <div class="menu-title">Charts</div>
+                <div class="menu-title">Roles & Permissions</div>
             </a>
             <ul>
-                <li> <a href="charts-apex-chart.html"><i class="bx bx-right-arrow-alt"></i>Apex</a>
+                <li> <a href="{{ route('all.permissions') }}"><i class="bx bx-right-arrow-alt"></i>All Permissions</a>
                 </li>
-                <li> <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Chartjs</a>
+                <li> <a href="charts-chartjs.html"><i class="bx bx-right-arrow-alt"></i>Add Permissions</a>
                 </li>
-                <li> <a href="charts-highcharts.html"><i class="bx bx-right-arrow-alt"></i>Highcharts</a>
-                </li>
+
             </ul>
         </li>
         <li>
