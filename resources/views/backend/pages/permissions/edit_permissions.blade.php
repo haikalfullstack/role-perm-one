@@ -29,9 +29,9 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form id="myForm" method="post" action="#">
+                            <form id="myForm" method="post" action="{{ route('update.permissions') }}">
                                 @csrf
-
+                                <input type="hidden" name="id" value="{{ $permissions->id }}">
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Permission Name</h6>

@@ -52,6 +52,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/add/permissions', [RoleController::class, 'AddPermissions'])->name('add.permissions');
     Route::post('/store/permissions', [RoleController::class, 'StorePermissions'])->name('store.permissions');
     Route::get('/edit/permissions/{id}', [RoleController::class, 'EditPermissions'])->name('edit.permissions');
+    Route::post('/update/permissions', [RoleController::class, 'UpdatePermissions'])->name('update.permissions');
     
 
 });
