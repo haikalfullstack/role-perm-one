@@ -60,6 +60,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/all/roles', [RoleController::class, 'AllRoles'])->name('all.roles');
     Route::get('/add/roles', [RoleController::class, 'AddRoles'])->name('add.roles');
     Route::post('/store/roles', [RoleController::class, 'StoreRoles'])->name('store.roles');
+    Route::get('/edit/roles/{id}', [RoleController::class, 'EditRoles'])->name('edit.roles');
     
 
 });

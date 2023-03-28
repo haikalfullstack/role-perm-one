@@ -91,5 +91,10 @@ class RoleController extends Controller
 
         return redirect()->route('all.roles')->with($notification);
     }
+
+    public function EditRoles($id){
+        $roles = Role::findOrFail($id);
+        return view('backend.pages.permissions.edit_roles', compact('roles'));
+    }
     // End Roles
 }
