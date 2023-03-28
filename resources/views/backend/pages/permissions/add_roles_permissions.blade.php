@@ -46,6 +46,14 @@
                                         </select>
                                     </div>
 
+                                    <div class="ps-2">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="flexCheckDefaultAll">
+                                            <label for="flexCheckDefaultAll" class="form-check-label">Permissions All</label>
+                                        </div>
+                                    </div>
+
+
                                     <hr class="mt-5">
 
                                     @foreach($permissions_groups as $group)
@@ -61,10 +69,18 @@
                                             </div>
                                         </div>
                                         <div class="col-9">
+                                            @php
+                                            $permissions = App\Models\User::getPermissionsByGroupName($group->group_name);
+                                            @endphp
+
+                                            @foreach($permissions as $permission)
+
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="flexCheckDefault1">
-                                                <label for="flexCheckDefault1" class="form-check-label">dfault</label>
+                                                <label for="flexCheckDefault1" class="form-check-label">{{ $permission->name }}</label>
                                             </div>
+
+                                            @endforeach
                                         </div>
 
                                     </div>
@@ -97,32 +113,13 @@
 
 
 
-
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#myForm').validate({
-            rules: {
-                name: {
-                    required: true
-                , }
-            , }
-            , messages: {
-                category_name: {
-                    required: 'Please Enter Roles Name'
-                , }
-            , }
-            , errorElement: 'span'
-            , errorPlacement: function(error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            }
-            , highlight: function(element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            }
-            , unhighlight: function(element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        , });
+    $('#flexCheckDefaultAll').click(function() {
+        if ($(this).is(':checked')) {
+            $('input[type = checkbox]').prop('checked', true)
+        } else {
+            $('input[type = checkbox]').prop('checked', false)
+        }
     });
 
 </script>
