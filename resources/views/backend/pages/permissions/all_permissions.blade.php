@@ -48,7 +48,7 @@
                                 <a href="{{ route('edit.permissions', $item->id)}}" class="btn btn-info">Edit</a>
 
 
-                                <a href="#" class="btn btn-danger" id="delete">Delete</a>
+                                <a href="{{ route('delete.permissions', $item->id) }}" class="btn btn-danger" id="delete">Delete</a>
 
 
                             </td>
