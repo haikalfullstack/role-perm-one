@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
+use DB;
 
 class RoleController extends Controller
 {
@@ -133,5 +134,24 @@ class RoleController extends Controller
         $permissions = Permission::all();
         $permissions_groups = User::getPermissionsGroups();
         return view('backend.pages.permissions.add_roles_permissions', compact('roles', 'permissions', 'permissions_groups'));
+    }
+
+    public function RolesPermissionsStore(Request $request){
+        $data = array();
+        $permissions = $request->permissions;
+
+        foreach ($permissions as $permission) {
+            $data['role_id'] = $request->role_id;
+            $data['permission_id'] = $permission;
+
+            DB::table('role_has_permissions')->insert($data);
+        }
+
+        $notification = array(
+            'message' => 'Roles Permission Updated Sucessfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.roles')->with($notification);
     }
 }
