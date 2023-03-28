@@ -96,5 +96,21 @@ class RoleController extends Controller
         $roles = Role::findOrFail($id);
         return view('backend.pages.permissions.edit_roles', compact('roles'));
     }
+
+    public function UpdateRoles(Request $request ){
+        $role_id = $request->id;
+        $roles =  Role::findOrFail($role_id)->update([
+            'name' => $request->name,
+            
+        ]);
+
+        
+        $notification = array(
+            'message' => 'Roles Updated Sucessfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.roles')->with($notification);
+    }
     // End Roles
 }
